@@ -1,0 +1,21 @@
+{
+    "emp_table": {
+        "column": {
+            "empid": true,
+            "fname": true,
+            "lname": true,
+            "email": true,
+            "cname": true,
+            "dpt": true,
+            "ocp": true,
+            "mbl": true,
+            "adrs": true,
+            "jd": true,
+            "db": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
+

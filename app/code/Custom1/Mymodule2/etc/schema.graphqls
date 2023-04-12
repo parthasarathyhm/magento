@@ -1,0 +1,39 @@
+type Query
+{
+    detailsStore:detailsStoreOutput @resolver(class:"Custom1\\Mymodule2\\Model\\Resolver\\store")
+    @doc(description:"List of Pickup Stores")
+}
+type detailsStoreOutput
+{
+total_count:Int @doc(description:"Total Stores"),
+Userdetails:[detailsStore] @doc(description:"Store Data")
+}
+
+type detailsStore
+{
+    firstname:String @doc(description:"firstname"),
+    lastname:String @doc(description:"lastname"),
+    email:String @doc(description:"email"),
+    telephone:String @doc(description:"telephone"),
+    city:String @doc(description:"city"),
+    state:String @doc(description:"state"),
+    Country:String @doc(description:"Country"),
+}
+
+
+#creation of mutation
+type Mutation {
+    userDetails (input: detailsInput! @doc(description:"An input you have to fill")):
+    userDetailsOutput @resolver(class:"Custom1\\Mymodule2\\Model\\Resolver\\storeMutation")
+    @doc (description:"output of mutation")
+}
+
+input detailsInput {
+    groupId:Int! @doc(description:"enter the groupid")
+    groupName:String! @doc(description:"enter the groupName")
+}
+
+type userDetailsOutput {
+    groupId:Int @doc(description:"status of mutation")
+    groupName:String @doc(description:"message of mutation")
+}
